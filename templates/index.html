@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        .result {
+            white-space: pre-wrap;
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Выберите класс и введите значение</h1>
+    <form method="post">
+        <label for="class">Класс:</label>
+        <select name="class" id="class">
+            <option value="F1">F1</option>
+            <option value="F2">F2</option>
+            <option value="F3">F3</option>
+        </select>
+        <br><br>
+        <label for="value">Значение:</label>
+        <input type="text" name="value" id="value" required>
+        <br><br>
+        <button type="submit">Рассчитать</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h2>Результат:</h2>
+        <pre>{{ result }}</pre>
+    </div>
+    {% endif %}
+</body>
+</html>
